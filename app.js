@@ -94,6 +94,8 @@ Add a New Project
     if (projectData.confirmAddProject) {
       return promptProject(portfolioData);
     } else {
+      console.log(portfolioData)
+
       return portfolioData;
     }
   })
@@ -103,17 +105,19 @@ promptUser()
   .then(promptProject)
   .then(portfolioData => {
     return generatePage(portfolioData);
+   
   })
-  .then(pageHTML => {
-    return writeFile(pageHTML);
-  })
-  .then(writeFileResponse => {
-    console.log(writeFileResponse);
-    return copyFile();
-  })
-  .then(copyFileResponse => {
-    console.log(copyFileResponse);
-  })
-  .catch(err => {
-    console.log(err);
-  });
+  // })
+  // .then(pageHTML => {
+  //   return writeFile(pageHTML);
+  // })
+  // .then(writeFileResponse => {
+  //   console.log(writeFileResponse);
+  //   return copyFile();
+  // })
+  // .then(copyFileResponse => {
+  //   console.log(copyFileResponse);
+  // })
+  // .catch(err => {
+  //   console.log(err);
+  // });
